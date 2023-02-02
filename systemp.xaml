@@ -1,0 +1,195 @@
+﻿<Window x:Class="SHINS.systemp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SHINS" xmlns:uc="clr-namespace:SHINS.UserControls"
+        mc:Ignorable="d"
+        Title="systemp"  Width="1080"
+        Height="720"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Name="Window">
+    <Border Background="#ffffff"
+            Padding="30"
+            CornerRadius="25"
+            >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <!--Menu-->
+            <Border CornerRadius="10"
+                    Background="#FF673AB7" >
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"
+                                  BlurRadius="20"
+                                  Opacity="0.4" />
+                </Border.Effect>
+                <Grid>
+                    <StackPanel>
+                        <Button Style="{StaticResource menuButton}"
+                                  Margin="15 40 15 20"
+                                  Background="#ffffff" Click="Button_Click_3">
+
+                            <Image Source="/home.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                Background="#ffffff" Click="Button_Click">
+                            <Image Source="/users.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                Background="#ffffff" Click="Button_Click_1">
+                            <Image Source="/security.png"
+                                
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                Background="#ffffff" Click="Button_Click_2">
+                            <Image Source="/température-humidité.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                Background="#ffffff">
+                            <Image Source="/userrrr.png"
+                                   Width="20" />
+                        </Button>
+                        <Button x:Name="log_out" Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                VerticalAlignment="Bottom"
+                                Background="#ffffff" Click="log_out_Click">
+                            <Image Source="/logout.png"
+                                   Width="20"/>
+                        </Button>
+
+                    </StackPanel>
+                </Grid>
+
+
+            </Border>
+            <!--Page1-->
+            <Border x:Name="page1" Style="{StaticResource borderPAge}">
+                <Border.RenderTransform>
+                    <TranslateTransform Y="0" />
+                </Border.RenderTransform>
+                <Border CornerRadius="25">
+                    <Border.Background>
+                        <ImageBrush Stretch="Fill"
+                                    Opacity="0.6"
+                                    ImageSource="/maison.jpg" />
+                    </Border.Background>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <!--TITLE-->
+                        <StackPanel VerticalAlignment="Top"
+                                    Margin="55 55 0 0">
+                            <TextBlock Text="Temperature and humidity system"
+                                     
+                                   Foreground="#ffffff"
+                                   FontWeight="Bold"
+                                   FontSize="36"
+                                   TextWrapping="Wrap"/>
+                        </StackPanel>
+                        <StackPanel VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="0 40 0 0">
+                            <TextBlock TextAlignment="Center"
+                                       Foreground="#ffffff">
+                                <Run Text="32"
+                                     FontSize="50"/>
+                                <Run Text="°c"
+                                     FontWeight="Thin"
+                                     FontSize="36"/>
+                            </TextBlock >
+                            <TextBlock Text="Celecious"
+                                       Foreground="#ffffff"
+                                       TextAlignment="Center"
+                                       FontSize="25"
+                                        />
+
+                            <TextBlock Text="Controlling!"
+                                       Margin="0 10"
+                                       Foreground="#ffffff"
+                                       FontWeight="Bold"
+                                       FontSize="36"
+                                       TextWrapping="Wrap" />
+                        </StackPanel>
+
+                        <!--Pannels-->
+                        <StackPanel Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    Margin="0 0 50 0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+
+                                </Grid.RowDefinitions>
+                                <!--Cards-->
+                                <uc:Card  Grid.Row="0"
+                                          Grid.Column="0"
+                                          Margin="0 0 8 8 "
+                                          Title="Climatiseur"
+                                          ImageOff="C:\Users\21366\source\repos\SHINS\images\air-conditioner.png"
+                                          ImageOn="C:\Users\21366\source\repos\SHINS\images\air-conditioner (1).png"/>
+                                <uc:Card  Grid.Row="0"
+                                          Grid.Column="1"
+                                          Margin="8 0 0 8 "
+                                          Title="Systéme"
+                                          ImageOff="C:\Users\21366\source\repos\SHINS\images\systemp.png"
+                                          ImageOn="C:\Users\21366\source\repos\SHINS\images\systemp.png"
+                                          IsCheked="True"/>
+
+                                <uc:Card  Grid.Row="1"
+                                          Grid.Column="0"
+                                          Margin="0 8 8 0 "
+                                          Title="Lampe"
+                                          ImageOff="C:\Users\21366\source\repos\SHINS\images\lamp.png"
+                                          ImageOn="C:\Users\21366\source\repos\SHINS\images\lamp (1).png" />
+                                <uc:Card  Grid.Row="1"
+                                          Grid.Column="1"
+                                          Margin="8 8 0 0 "
+                                          Title="Chauffage"
+                                          ImageOff="C:\Users\21366\source\repos\SHINS\images\central-heating.png"
+                                          ImageOn="C:\Users\21366\source\repos\SHINS\images\heating.png" />
+
+
+
+
+
+                            </Grid>
+
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+
+
+            </Border>
+
+
+        </Grid>
+
+    </Border>
+
+</Window>
+

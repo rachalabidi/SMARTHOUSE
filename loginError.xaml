@@ -1,0 +1,20 @@
+﻿<Window x:Class="SHINS.loginError"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SHINS" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="loginError" Height="122" Width="365" AllowsTransparency="True"  WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid Background="red">
+        
+        <Label Content="error " HorizontalAlignment="Left" Height="53" Margin="98,22,0,0" VerticalAlignment="Top" Width="187" FontWeight="Bold" FontSize="36"/>
+        <ToggleButton Style="{StaticResource MaterialDesignFlatToggleButton}" ToolTip="MaterialDesignFlatToggleButton" Margin="332,-5,-7,71"  >
+            <materialDesign:PackIcon x:Name="Cls_btn_error" Width="15"
+                                   Height="15"
+                                   Kind="Close" MouseDoubleClick="Cls_btn_error_MouseDoubleClick"  />
+        </ToggleButton>
+    </Grid>
+   
+
+</Window>

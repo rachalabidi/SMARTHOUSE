@@ -1,0 +1,137 @@
+﻿<Window x:Class="SHINS.UserList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:local="clr-namespace:SHINS"
+        mc:Ignorable="d"
+        Width="1080"
+        Height="720"
+        Title="UserList" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="None"
+        AllowsTransparency="True" >
+    <Border Background="#ffffff"
+            Padding="30"
+            CornerRadius="25"
+            >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <!--Menu-->
+            <Border CornerRadius="10"
+                    Background="#FF673AB7" >
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"
+                                  BlurRadius="20"
+                                  Opacity="0.4" />
+                </Border.Effect>
+                <Grid>
+                    <StackPanel>
+                        <Button Style="{StaticResource menuButton}"
+                                  Margin="15 40 15 20"
+                                  Background="#ffffff" Click="Button_Click_3">
+
+                            <Image Source="/home.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                Background="#ffffff" Click="Button_Click">
+                            <Image Source="/users.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                Background="#ffffff" Click="Button_Click_1">
+                            <Image Source="/security.png"
+                                
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                Background="#ffffff" Click="Button_Click_2">
+                            <Image Source="/température-humidité.png"
+                                   Width="20" />
+                        </Button>
+                        <Button Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                Background="#ffffff">
+                            <Image Source="/userrrr.png"
+                                   Width="20" />
+                        </Button>
+                        <Button x:Name="log_out" Style="{StaticResource menuButton}"
+                                Margin="15 40 15 20"
+                                VerticalAlignment="Bottom"
+                                Background="#ffffff" Click="log_out_Click">
+                            <Image Source="/logout.png"
+                                   Width="20"/>
+                        </Button>
+
+                    </StackPanel>
+                </Grid>
+
+
+            </Border>
+            <!--Page1-->
+
+            <Border x:Name="page1" Style="{StaticResource borderPAge}">
+                <Border.RenderTransform>
+                    <TranslateTransform Y="0" />
+                </Border.RenderTransform>
+                <Border CornerRadius="25">
+                    <Border.Background>
+                        <ImageBrush ImageSource="/maison.jpg" Opacity="0.6"/>
+                    </Border.Background>
+                    <Grid Margin="0" RenderTransformOrigin="0.385,-0.857">
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition />
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="*" MinWidth="0" />
+                        </Grid.ColumnDefinitions>
+                        <!--TITLE-->
+                        <TextBlock Text="Members"
+                                   Foreground="#ffffff"
+                                   FontWeight="Bold"
+                                   FontSize="36" 
+                                   TextWrapping="Wrap" Margin="78,82,0,526"/>
+                        <Button Content="Add a member" Grid.Column="2" Margin="25,92,78,536" Width="200" Click="Button_Click_4" />
+
+                        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" ItemsSource="{Binding PersonList}" Margin="78,172,78,31"  Background="#19FAFAFA" Grid.ColumnSpan="3">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Id}" Header="ID" Width="120"  />
+                                <DataGridTextColumn Binding="{Binding FirstName}" Header="First Name" Width="120"  />
+                                <DataGridTextColumn Binding="{Binding LastName}" Header="Last Name"  Width="120" />
+                                <DataGridTextColumn Binding="{Binding Type}" Header="Type" Width="150 " />
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button x:Name="btnDelete" Content="Delete" Click="btnDelete_Click" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button x:Name="btnEdit" Content="Edit" Click="btnEdit_Click" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </Grid>
+
+                </Border>
+            </Border>
+        </Grid>
+
+    </Border>
+
+</Window>
